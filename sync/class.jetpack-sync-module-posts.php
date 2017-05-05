@@ -33,6 +33,8 @@ class Jetpack_Sync_Module_Posts extends Jetpack_Sync_Module {
 		add_action( 'wp_insert_post', array( $this, 'wp_insert_post' ), $priority, 3 );
 
 		add_action( 'deleted_post', $callable, 10 );
+		add_action( 'deleted_post', array( $this, 'detect_attachment_deletion') );
+		add_action( 'jetpack_delete_attachment', $callable);
 		add_action( 'jetpack_published_post', $callable, 10, 2 );
 		add_action( 'jetpack_trashed_post', $callable, 10, 2 );
 
@@ -94,6 +96,14 @@ class Jetpack_Sync_Module_Posts extends Jetpack_Sync_Module {
 	 */
 	function expand_wp_insert_post( $args ) {
 		return array( $args[0], $this->filter_post_content_and_add_links( $args[1] ), $args[2] );
+	}
+
+	function detect_attachment_deletion( $post_id ) {
+		$post = get_post( $post_id );
+		if ( 'attachment' === $post->post_type ) {
+			do_action( 'jetpack_delete_attachment', $post_id );
+		}
+
 	}
 
 	function filter_blacklisted_post_types( $args ) {
