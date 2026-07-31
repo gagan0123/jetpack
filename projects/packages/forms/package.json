@@ -89,7 +89,7 @@
 		"lodash": "4.17.23",
 		"photon": "4.1.1",
 		"react-redux": "7.2.8",
-		"react-router": "7.12.0",
+		"react-router": "8.3.0",
 		"react-transition-group": "^4.4.5",
 		"redux": "4.2.1",
 		"redux-thunk": "2.3.0",
@@ -102,7 +102,7 @@
 		"@automattic/jetpack-base-styles": "workspace:*",
 		"@automattic/jetpack-webpack-config": "workspace:*",
 		"@automattic/remove-asset-webpack-plugin": "workspace:*",
-		"@babel/core": "7.29.0",
+		"@babel/core": "7.29.6",
 		"@babel/runtime": "7.28.6",
 		"@svgr/webpack": "8.1.0",
 		"@tanstack/react-router": "^1.139.12",
@@ -127,7 +127,7 @@
 		"postcss-modules": "^6.0.0",
 		"sass-embedded": "1.97.2",
 		"sass-loader": "16.0.5",
-		"sharp": "0.33.5",
+		"sharp": "0.35.0",
 		"typescript": "5.9.3"
 	},
 	"optionalDependencies": {
